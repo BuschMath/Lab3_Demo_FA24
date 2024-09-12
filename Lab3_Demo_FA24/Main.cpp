@@ -8,7 +8,7 @@ void printNumber(int number);
 
 int main()
 {
-	std::cout << "We need four numbers from you." << std::endl;
+	/*std::cout << "We need four numbers from you." << std::endl;
 	
 	int number1 = getInput("first");
 	int number2 = getInput("second");
@@ -18,7 +18,13 @@ int main()
 	printNumber(number1);
 	printNumber(number2);
 	printNumber(number3);
-	printNumber(number4);
+	printNumber(number4);*/
+
+	std::ifstream inFile;				// Declare an input file stream (simular to cin)
+	inFile.open("inMeanStd.dat");			// Open file for reading called input.dat
+	int number1, number2, number3, number4;
+	inFile >> number1 >> number2 >> number3 >> number4;	// Read from the file
+	inFile.close();						// Close the file
 
 	StatsCalc statsCalc;
 	float mean = statsCalc.mean(number1, number2, number3, number4);
